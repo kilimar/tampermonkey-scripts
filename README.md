@@ -3,4 +3,4 @@
 
 ## Scripts
 ### eBay
-* [The script](ebay/ebay_add-copy-short-url-btn.user.js) adds a copy short url button near the social buttons.
+* [The script](ebay/add-copy-short-url-btn.user.js) adds a copy short url button near the social buttons.

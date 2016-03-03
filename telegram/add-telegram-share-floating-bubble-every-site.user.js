@@ -12,7 +12,7 @@
 var floatingButton = '<div id="telegram-share-btn" onclick="javascript:;" title="Send to Telegram"><div id="close-telegram-share" title="Close bubble" onclick="javascript:;"><div id="cross"></div></div></div>';
 
 addGlobalStyle('#telegram-share-btn { background: ' + tlgrmShrGetIcon('telegram') + ' no-repeat; background-size: contain; width: 50px; height: 50px; position: fixed; bottom: 10px; left: 10px; opacity: 0.5; cursor: pointer; } #telegram-share-btn:hover { opacity: 1; }');
-addGlobalStyle('#close-telegram-share { background: ' + tlgrmShrGetIcon('close') + ' no-repeat; background-size: contain; top: -15%; right: -15%; width: 30%; height: 30%; position: relative; opacity: 0.5; cursor: pointer; float: right; } #close-telegram-share:hover { opacity: 1; }');
+addGlobalStyle('#close-telegram-share { background: ' + tlgrmShrGetIcon('close') + ' no-repeat; background-size: contain; top: -15%; right: -15%; width: 30%; height: 30%; position: relative; opacity: 0.5; cursor: pointer; float: right; visibility: hidden; } #close-telegram-share:hover { opacity: 1; }');
 
 var tempDiv = document.createElement('div');
 tempDiv.innerHTML = floatingButton;

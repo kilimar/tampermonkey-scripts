@@ -5,8 +5,10 @@ The **Share to Telegram** floating bubble is located in the down-left corner and
 * If you'll click on the logo itself, [telegram web](https://web.telegram.org) will be opened with the `forward` dialog. Just choose the desired chat!
 * After choosing a chat, the chat will open with the website shared information in the text area, ready to be sent!
  * The message will look like this:
- ```https://the.shared.website/some/page
- Shared page title! wow!```
+ ```
+ https://the.shared.website/some/page
+ Shared page title! wow!
+ ```
 
 ### Close bubble
 When hover, the close button will appear - it will close the bubble until the next refresh.

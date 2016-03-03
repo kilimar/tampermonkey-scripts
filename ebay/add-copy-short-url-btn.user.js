@@ -4,12 +4,13 @@
 // @version      0.1
 // @description  Adds a copy short url button to ebay item page. Copies a nice link instead of a long one. The short url - http://www.ebay.com/itm/item_id
 // @author       Ariel Jannai
-// @include		 *://www.ebay.com/itm/*
-// @include		 *://www.ebay.de/itm/*
-// @include		 *://www.ebay.co.uk/itm/*
-// @include		 *://www.ebay.com.au/itm/*
+// @include		   *://www.ebay.com/itm/*
+// @include		   *://www.ebay.de/itm/*
+// @include		   *://www.ebay.co.uk/itm/*
+// @include		   *://www.ebay.com.au/itm/*
 // @run-at       document-end
 // @icon         https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/ebay-128.png
+// @grant        none
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';

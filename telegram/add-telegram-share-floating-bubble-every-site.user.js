@@ -5,6 +5,11 @@
 // @description  Adds a share to telegram floating bubble to every site.
 // @author       Ariel Jannai
 // @icon         https://telegram.org/img/t_logo.png
+// @noframes
+// @grant        none
+// @exclude      https://web.telegram.org/
+// @exclude      https://zhukov.github.io/webogram
+// @exclude      https://web.whatsapp.com/
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';

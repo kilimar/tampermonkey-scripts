@@ -5,6 +5,7 @@
 // @description  Calling decodeURI to get a nicer and readable URI (Ctrl + Shift + V)
 // @author       Ariel Jannai
 // @icon         https://pixabay.com/static/uploads/photo/2012/04/16/13/10/document-35941_960_720.png
+// @include      /^https?://.*/
 // @grant        none
 // ==/UserScript==
 /* jshint -W097 */

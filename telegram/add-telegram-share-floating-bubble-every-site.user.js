@@ -7,6 +7,7 @@
 // @icon         https://telegram.org/img/t_logo.png
 // @noframes
 // @grant        none
+// @include      /^https?://.*/
 // @exclude      https://web.telegram.org/
 // @exclude      https://zhukov.github.io/webogram
 // @exclude      https://web.whatsapp.com/

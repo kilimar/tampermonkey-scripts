@@ -5,6 +5,9 @@
 ### eBay
 * [The script](ebay/add-copy-short-url-btn.user.js) adds a copy short url button near the social buttons.
 
+### [Threadless](https://www.threadless.com) Infinite Scroll
+* Replace the regular pagination with infinite scroll
+
 ### Telegram
 * [The script](telegram/add-telegram-share-floating-bubble-every-site.user.js) adds a floating `Share to Telegram` bubble on every site.
 

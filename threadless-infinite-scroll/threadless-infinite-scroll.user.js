@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Threadless Infinite Scroll
 // @namespace    https://github.com/arieljannai
-// @version      0.1
+// @version      0.2
 // @description  Infinite scroll for threadless.com
 // @author       Ariel Jannai
 // @match        *://www.threadless.com/*
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
 
-    var infiniteLoadingGif = "<div class='infinite-loading' style='text-align:center; margin:0 auto; width:50%'><img src='https://getmocky.com/images/big_preloader.gif'></img></div>";
+    var infiniteLoadingGif = "<div class='infinite-loading' style='text-align:center; margin:0 auto; width:50%'><img src='https://i.imgur.com/NH1zQtD.gif'></img></div>";
 
     function isScrolledIntoView(elem) {
         var docViewTop = $(window).scrollTop();

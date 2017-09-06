@@ -2,7 +2,7 @@
 Adds hyperlinks to the course number in the avnei pina table, that will point to the course sylabus page.
 
 ## Before and after
-![](huji-avnei-pina/img1.png)
+![](img1.png)
 
 ### Suggestions, bugs etc.
 At [GitHub](https://github.com/arieljannai/tampermonkey-scripts)

@@ -1,5 +1,5 @@
 # Tampermonkey Scripts
-My [Tampermonkey](https://tampermonkey.net/) scripts (greasemonkey for chrome) at [Greasy Fork](https://greasyfork.org/en/users/32144-ariel) or [OpenUserJS](https://openuserjs.org/users/arieljannai/scripts) :monkey_face:
+My [Tampermonkey][1] scripts <sup>[\[1\]](#tested-for)</sup> at [Greasy Fork](https://greasyfork.org/en/users/32144-ariel) or [OpenUserJS](https://openuserjs.org/users/arieljannai/scripts) :monkey_face:
 
 ## Scripts
 ### eBay
@@ -16,3 +16,11 @@ My [Tampermonkey](https://tampermonkey.net/) scripts (greasemonkey for chrome) a
 
 ### Facebook
 * [The script](facebook/remove-upnext-popup-cancel-next.user.js) removes the `UP NEXT` popup that's shows in the last few seconds of a Facebook video, and cancels the next video from automatically playing.
+
+# Notes
+##### Tested for
+<sup>\[1\]</sup> Tested and written for [Tampermonkey][1], might work for other user script managers as well.
+
+
+
+  [1]: https://tampermonkey.net/

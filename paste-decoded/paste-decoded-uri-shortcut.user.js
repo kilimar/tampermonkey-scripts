@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         decodeURI & Paste text - Keyboard shortcut
 // @namespace    https://github.com/arieljannai/tampermonkey-scripts
-// @version      0.1
+// @version      0.1.1
 // @description  Calling decodeURI to get a nicer and readable URI (Ctrl + Shift + V)
 // @author       Ariel Jannai
 // @icon         https://pixabay.com/static/uploads/photo/2012/04/16/13/10/document-35941_960_720.png

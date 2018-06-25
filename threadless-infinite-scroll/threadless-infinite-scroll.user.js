@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Threadless Infinite Scroll
 // @namespace    https://github.com/arieljannai
-// @version      0.3
+// @version      0.3.1
 // @description  Infinite scroll for threadless.com
 // @author       Ariel Jannai
 // @match        *://www.threadless.com/*

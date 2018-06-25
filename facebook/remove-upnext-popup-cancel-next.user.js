@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remove Facebook Play Next Popup
 // @description  Removes the annoying UP NEXT popup from Facebook videos and cancels the next video play automatically.
-// @version      0.1
+// @version      0.1.1
 // @author       Ariel Jannai
 // @namespace    https://github.com/arieljannai/tampermonkey-scripts
 // @supportURL   https://github.com/arieljannai/tampermonkey-scripts/issues

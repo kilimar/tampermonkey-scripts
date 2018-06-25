@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Link Avnei Pina To Sylabus
 // @namespace    https://github.com/arieljannai
-// @version      0.1
+// @version      0.1.1
 // @description  Adds hyperlinks to the course number in the avnei pina table, that will point to the course sylabus page.
 // @author       Ariel Jannai
 // @match        *://ap.huji.ac.il/apcourses

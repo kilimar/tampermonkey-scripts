@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Share to Telegram (floating bubble)
 // @namespace    https://github.com/arieljannai
-// @version      0.1
+// @version      0.1.1
 // @description  Adds a share to telegram floating bubble to every site.
 // @author       Ariel Jannai
 // @icon         https://telegram.org/img/t_logo.png

@@ -11,6 +11,7 @@
 // @run-at       document-end
 // @icon         https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/ebay-128.png
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';

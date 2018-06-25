@@ -11,6 +11,7 @@
 // @exclude      https://web.telegram.org/
 // @exclude      https://zhukov.github.io/webogram
 // @exclude      https://web.whatsapp.com/
+// @license      MIT
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';

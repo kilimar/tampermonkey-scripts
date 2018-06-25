@@ -7,6 +7,7 @@
 // @match        *://ap.huji.ac.il/apcourses
 // @icon         http://ap.huji.ac.il/sites/all/themes/harp/favicon.ico
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function() {

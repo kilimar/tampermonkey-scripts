@@ -7,6 +7,7 @@
 // @match        *://www.threadless.com/*
 // @icon         https://www.threadless.com/favicon.ico
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function() {

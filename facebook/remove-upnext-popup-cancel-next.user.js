@@ -7,7 +7,7 @@
 // @supportURL   https://github.com/arieljannai/tampermonkey-scripts/issues
 // @updateURL    https://github.com/arieljannai/tampermonkey-scripts/raw/master/facebook/remove-upnext-popup-cancel-next.user.js
 // @downloadURL  https://github.com/arieljannai/tampermonkey-scripts/raw/master/facebook/remove-upnext-popup-cancel-next.user.js
-// @match        https://www.facebook.com/*/videos/*
+// @match        https://www.facebook.com/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @grant        none
 // @license      MIT
@@ -15,17 +15,40 @@
 
 'use strict';
 
-(function waitForUpNextToDisaply() {
+var videoPageIntervalID = 0;
+var waitingForPopup = false;
+var currLocation = '';
+
+(function() {
+    videoPageIntervalID = window.setInterval(onVideoPage, 1000);
+})();
+
+function waitForUpNextToDisaply() {
     var selector = $("div:contains('UP NEXT')").eq(-8)
     if(selector.length === 1) {
         // remove the popup and cancel the play next
         selector.remove();
         console.log('popup removed!');
+        waitingForPopup = false;
         return;
     }
     else {
         setTimeout(function() {
-            waitForUpNextToDisaply();
+            // console.log('waiting..');
+            waitingForPopup = true;
+            if (location.href.contains("/videos/")) {
+                waitForUpNextToDisaply();
+            } else {
+                waitingForPopup = false;
+            }
         }, 500);
     }
-})();
+}
+
+function onVideoPage() {
+    if (location.href.contains("/videos/") && !waitingForPopup && location.href != currLocation ) {
+        console.log('arrived to video page: ', location.href);
+        currLocation = location.href;
+        waitForUpNextToDisaply();
+    }
+}

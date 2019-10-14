@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         eBay copy short url button
 // @namespace    https://github.com/arieljannai
-// @version      0.1.4
+// @version      0.1.5
 // @description  Adds a copy short url button to ebay item page. Copies a nice link instead of a long one. The short url - http://www.ebay.com/itm/item_id
 // @author       Ariel Jannai
 // @include		 https://www.ebay.tld/itm/*

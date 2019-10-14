@@ -4,10 +4,7 @@
 // @version      0.1.4
 // @description  Adds a copy short url button to ebay item page. Copies a nice link instead of a long one. The short url - http://www.ebay.com/itm/item_id
 // @author       Ariel Jannai
-// @include		   *://www.ebay.com/itm/*
-// @include		   *://www.ebay.de/itm/*
-// @include		   *://www.ebay.co.uk/itm/*
-// @include		   *://www.ebay.com.au/itm/*
+// @include		 https://www.ebay.tld/itm/*
 // @run-at       document-end
 // @icon         https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/ebay-128.png
 // @grant        none
@@ -16,18 +13,37 @@
 /* jshint -W097 */
 'use strict';
 
-// http://icons.iconarchive.com/icons/icons8/windows-8/32/Editing-Copy-Link-icon.png
-var copyIcon = 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC0klEQVR42sWXW4hOURTH1+cyuUWiaYrShEmuzaN5kCFvkgcPmDFNUUpRDNM0pmaIkEKjKPdLuecSJS+SEo2HmUEeJJd4kEJKDTLD/99aX9+Z851zvn2+M2es+rX3Od/Z3/7vvc5ae52M5Gwt2Ahmg6ESbr3gLtgAPkhCy1h7DqyJOfYzWAqeJhXAlZ+w60/gIvgeMaYETAWvwFfQDvqSCOgC82zySmsL2QxQ4dnBIPsFHoCfhQT8EfX5QbDFYeJTYL7jAj+CGvAwSsBf67eBHRF/Ng08ARMcJ8/ab1ALriYVcFv0paMdFX1xeyKeHw+uW8vIqQMXihUwFnwDQ+xPahxXfwsss36gCFcBc0G39VeLRoqLnQb1nus8Ea4CGCVd1l9uKytGQJ6I/yEgK2IFuJm2gD2gKeQ3vsBVaQsYDpZYSxsDykAjKAWP0hYQZrvAdnbSFsAcwBB+77vfavOlJmAkOCYasswdz2zc28EQwMnvgEXgEngNtoHHoHowBEwBM8EkyR3zZ0XPg2yhk4qAYaJFTZWoz4+I1gujQKdoHVGelgBuOw+rxaLFCf3eARZ63FFvOzHgArw+3w+aRWN/Mlhp95mM9nnGDJgA7+SHwDvRg4qplud/dcDkeQL6rKX6xpgCuKU8WPaC8+C5aIVFKwmZPE/ACzBLtMSeI8EFaZAAVkasjK+AVfYbV1xri+JO3A9ZUD8B/BZotx/eiNZ8PzwPv7SJ/ALK7fndoEU04zEKOmxRUdVSPwF8Y29IrnLx2xnzb5ALmOFYHV8WLVSnR2x7qAAaE0QD2CSaQFwFcBeOi4YbY3+n5EItlgCvTQSjPdd0R6m5grZeNM8nsQNgM+jNOA5glvsi6mfuBLNdj+NYv7Ee6LS221UAjWG61fo8YK5Jga+eABsnGjFldr0ujoAR4B5YUOTK/ca8URdHAI2lFX3HD9qKIiZlhmSIHgYneeMfv6reNvMbmkwAAAAASUVORK5CYII=")';
-var copyButton = '<div style="float:left"><a rel="nofollow" href="javascript:;" ' +
+// http://www.iconarchive.com/show/windows-8-icons-by-icons8/Very-Basic-Link-icon.html
+var copyLinkIcon = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACNElEQVR42qWVu0tcURDGZwUfKCI2KbQRVggq6Ga1MZouRhIhIOpfYGMhIpiNFmoSTRORRBaLNP4FJlgYNKiV66PR9QEqqCkstrIQTSI+wOSb3Bk5uXvW3bsO/OA+zv2+OXPmnOuj+4UfdIInoADEwDT4DH7zAN89xLvACMiSe9b6I9c/QBPYT9dgALxLkuAhCKRjoOKa9S54I1k3yLscmU3Iq4EpzrECnoOfxrOQlI4NIl4M3GVZtohzPAJRLVOqBrmgUK5rQCPotYhztIJJmUE0FYMMUAvKwA3YAusJxuaDVVAhBp+SGbSAUVDies4laAebLvFZUCf3l2x0l0E/GJJr7XGz13/JrGKG+GPj+24QTmQwIOIqdgYWQDZ4BjLlOe/gbSNzHc9tO6yZ2cS1W/gDbsVmcCzvq+U9r8UHMCOZ6/hbcZuBZq7BrfiCnI6pko91gR+AKaMsceJuA3dZdBNVgiV5fg3mZAGfknPAxZXFZsAH1xjZN1Ex2JOFtAUbDIL3tpcsyEfuDjmnoo/sOzQAJkDQyJjjCLwCXxOY/xP8SE5LcfDBVUv2HaoLzGuRIbPiTXVDd4RPFi0o923gi2Ucl4c75jtYk+9OwDklCR54IGXSDDcs4rqJrK2YzGAR1Mt9HzlHrVtcNxGPH0xVXA16yDlvOC4ku3lQCt6CcmO8J3E1yCPn0PLT/2eNeU1eyuI24HgIvknWboMr8BqEvYqbBiQz6QAvQRE4BREwTs7/Nq34C5e+h6/23oiCAAAAAElFTkSuQmCC')"
+
+// http://icons.iconarchive.com/icons/yusuke-kamiyamane/fugue/16/edit-number-icon.png
+var copyNumberIcon = "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALZJREFUeNpi/P//PwMlgImBQkCxAQwgL4AwIyMjOtYG4jVQGoUP0wPC+FxgCsS/gPgqDj5BL3gC8R48fDBghMUCExPYLD0gbifk7X///nkTCoM0IN6Ii09MGPgD8Q48fJxeOExExOUBvXAenxfygXgfHj52LyAl6Qgg3opkI5wP04QMWJDYzEBJOyAtC8S3gVgKGiswvggQfwTi31jDAOg0ZiDFB8ScOPz+C2YAsisYBzw3AgQYAPe7bHJIc8toAAAAAElFTkSuQmCC')"
+
+var copyLinkButton = '<div style="float:left"><a rel="nofollow" href="javascript:;" ' +
 				'class="copy-url" aria-label="Copy short url to clipboard" ' +
 				'title="Copy short url to clipboard" target="_blank"><span class="copy-short-url"/></a></div>';
+
+var copyNumberButton = '<div style="float:left"><a rel="nofollow" href="javascript:;" ' +
+				'class="copy-number" aria-label="Copy item number url to clipboard" ' +
+				'title="Copy item number to clipboard" target="_blank"><span class="copy-item-number"/></a></div>';
 
 function tryShortUrl(url) {
 	var urlPattern = /ebay\.(com|de|co\.uk)\/itm/;
 
 	if(urlPattern.test(url)) {
 		var id = url.match(/\/(\d{12})(\?|$)/)[1];
-		return 'http://www.' + urlPattern.exec(url)[0] + '/' + id;
+		return 'http://www.' + urlPattern.exec(url)[0] + '/' + id;f
+	} else {
+		return url;
+	}
+}
+
+function tryItemNumber(url) {
+	var urlPattern = /ebay\.(com|de|co\.uk)\/itm/;
+
+	if(urlPattern.test(url)) {
+		var id = url.match(/\/(\d{12})(\?|$)/)[1];
+		return id;f
 	} else {
 		return url;
 	}
@@ -84,7 +100,6 @@ function copyTextToClipboard(text) {
   // Avoid flash of white box if rendered for any reason.
   textArea.style.background = 'transparent';
 
-
   textArea.value = text;
 
   document.body.appendChild(textArea);
@@ -104,12 +119,23 @@ function copyTextToClipboard(text) {
 
 // start
 
-addGlobalStyle('.copy-short-url { background: ' + copyIcon + '; width: 18px; height: 18px; float: left; background-size: contain;}');
+addGlobalStyle('.copy-short-url { background: ' + copyLinkIcon + '; width: 18px; height: 18px; float: left; background-size: contain;}');
 addGlobalStyle('.copy-url { margin-right: 3px; }');
 
 $('div.social-widget > div')[0].style.float = "right";
-$('div.social-widget').prepend(copyButton);
+$('div.social-widget').prepend(copyLinkButton);
 
-$('.copy-url')[0].addEventListener('click', function(event) {
-	copyTextToClipboard(tryShortUrl(document.location.href));
+//$('.copy-url')[0].addEventListener('click', function(event) {
+	//copyTextToClipboard(tryShortUrl(document.location.href));
+
+addGlobalStyle('.copy-item-number { background: ' + copyNumberIcon + '; width: 18px; height: 18px; float: left; background-size: contain;}');
+addGlobalStyle('.copy-number { margin-right: 3px; }');
+
+$('div.social-widget > div')[0].style.float = "left";
+$('div.social-widget').prepend(copyNumberButton);
+
+$('.copy-number')[0].addEventListener('click', function(event) {
+	copyTextToClipboard(tryItemNumber(document.location.href));
+
+
 });
